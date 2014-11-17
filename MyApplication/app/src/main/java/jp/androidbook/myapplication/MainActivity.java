@@ -2,6 +2,11 @@ package jp.androidbook.myapplication;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -14,7 +19,14 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
+    public void button_onClick(View view){
+        TextView text = (TextView)this.findViewById(R.id.textView);
+        EditText edit = (EditText)this.findViewById(R.id.editText);
+        Editable s = edit.getText();
+        text.setText("Hi, " + s + "!");
+    }
 
+/**/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
